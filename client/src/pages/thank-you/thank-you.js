@@ -34,8 +34,7 @@ class ThankYou extends Component {
     };
     getCookie() {
         const cookies = new Cookies();
-        if(!cookies.get("user")){
-
+        if (!cookies.get("demo-requested")){
             this.props.history.push("/landing-page");
         } else{
 
