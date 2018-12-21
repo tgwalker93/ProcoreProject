@@ -136,7 +136,6 @@ class LandingPage extends Component {
         }
 
         cookies.set("demo-requested", userObj, { path: "/" });
-        console.log(cookies.get("demo-requested"))
         this.props.history.push("/thank-you");
     } 
     };
