@@ -1,0 +1,17 @@
+
+
+#firstName, #lastName {
+    text-transform: capitalize;
+} 
+#firstName:focus, #lastName:focus {
+    text-transform: none;
+}
+#guestCountError {
+    color: #a94442;
+}
+.help-block {
+    text-align: right;
+}
+#mainRow {
+    margin-top: 125px;
+}
