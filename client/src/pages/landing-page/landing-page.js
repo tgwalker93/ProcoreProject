@@ -185,7 +185,7 @@ class LandingPage extends Component {
 
 
                         
-                        <FormBtn onClick={this.handleFormSubmit} type="submit"> RSVP </FormBtn>
+                        <FormBtn onClick={this.handleFormSubmit}> RSVP </FormBtn>
                         </form>
                     </Col>
 
