@@ -24,6 +24,9 @@ class LandingPage extends Component {
     }
 
 
+    componentDidMount() { 
+        
+    }
     // Handles updating component state when the user types into the input field
     handleChange(e) {
         this.setState({ [e.target.id]: e.target.value });
