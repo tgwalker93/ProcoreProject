@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import "./thank-you.css";
-// import {*} from 'react-cookie';
 import Cookies from 'universal-cookie';
 
 
@@ -34,17 +33,17 @@ class ThankYou extends Component {
     };
     getCookie() {
         const cookies = new Cookies();
-        if (!cookies.get("demo-requested")){
-            this.props.history.push("/landing-page");
-        } else{
-
+        // if (!cookies.get("demo-requested")){
+        //     this.props.history.push("/landing-page");
+        // } else{
+        console.log(cookies.get("demo-requested"));
         var userData = cookies.get("demo-requested");
         this.setState({firstName:userData.firstName});
         this.setState({lastName: userData.lastName});
         this.setState({emailAddress: userData.emailAddress});
         this.setState({phoneNumber: userData.phoneNumber});
         this.setState({guestCount: userData.guestCount});
-        }
+        // }
         
     }
 
