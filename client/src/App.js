@@ -10,9 +10,9 @@ const App = () =>
     <Switch>
       <Route exact path="/landing-page" component={landingpage} />
       <Route exact path="/thank-you" component={thankyou} />
-        <Route exact path="/" render={() => (
+        {/* <Route exact path="/" render={() => (
           <Redirect to="/landing-page" />
-        )} />
+        )} /> */}
     </Switch>
   </div>
   </Router>;
