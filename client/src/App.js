@@ -13,6 +13,8 @@ const App = () =>
         {/* <Route exact path="/" render={() => (
           <Redirect to="/landing-page" />
         )} /> */}
+        <Route component={landingpage} />
+
     </Switch>
   </div>
   </Router>;
