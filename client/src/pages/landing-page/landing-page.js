@@ -133,7 +133,7 @@ class LandingPage extends Component {
             "guestCount": this.state.guestCount
         }
 
-        cookies.set(" demo-requested", userObj, { path: "/thank-you" });
+        cookies.set("demo-requested", userObj, { path: "/thank-you" });
         this.props.history.push("/thank-you");
 
     } 
