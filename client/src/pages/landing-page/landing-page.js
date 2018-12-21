@@ -143,20 +143,24 @@ class LandingPage extends Component {
 
     render() {
         return (
-            <Container fluid>
+            <Container id="container" fluid>
 
                 <Row id="mainRow">
-                    <Col size="md-6">
+                    <Col id="textCol" size="sm-6">
                         <img alt="Styleguide" src="https://prcmkt.com/styleguide/images/procore_logo_fc_k.jpg"></img>
-                        <h1> Pssst… can you keep a secret ? </h1>
+                        <h1 id="textColHeader"> Pssst… can you keep a secret? </h1>
+                        <div id="textColP">
                         <p> Something unexpected is in the works between Assemble and Procore and we have a feeling it is about to make you insanely happy. </p>
                         <p> <strong> Join us at an exclusive dinner to get the scoop before anyone else… </strong></p>
                         <p> Here are the details:</p>
                         <p>What: Complimentary dinner and drinks with an announcement by Procore and Assemble</p>
                         <p>Venue: Guard and Grace Address: Guard and Grace, 1801 California St, Denver, CO 80202</p>
-                        <p>Date: Monday, August 21 st Time: 6: 30 PM </p>
+                        <p id="lastP">Date: Monday, August 21 st Time: 6: 30 PM </p>
+                        </div>
+                        <hr id="hline"></hr>
                     </Col>
-                    <Col size="md-6">
+                    
+                    <Col id="formCol" size="sm-6">
                         <h1>RSVP Here</h1>
                         <form>
                         <p>First Name</p>

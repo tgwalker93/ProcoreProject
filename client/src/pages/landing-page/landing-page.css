@@ -1,5 +1,11 @@
 
-
+#container {
+    margin: 40px;
+    margin-top: 125px;
+}
+#textColP{
+    font-size: 40 !important;
+}
 #firstName, #lastName {
     text-transform: capitalize;
 } 
@@ -13,11 +19,18 @@
     text-align: right;
 }
 #mainRow {
-    margin-top: 125px;
+    color: #282828;
+    background-color: #FFFFFF;
 }
 button {
     border-radius: 100px !important;
     border: 1px solid #282828 !important;
-    background-color: #F6F6F6 !important;
+    background-color: #FFFFFF !important;
     color: #282828 !important;
+}
+
+@media (max-width: 1200px) {
+    #container {
+        margin-top: 0px;
+    }
 }
