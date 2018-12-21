@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import Cookies from 'universal-cookie';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import "./landing-page.css";
 class LandingPage extends Component {
     // Setting our component's initial state
@@ -118,10 +119,10 @@ class LandingPage extends Component {
         this.validateField("emailAddress", this.state.emailAddress);
         this.validateField("phoneNumber", this.state.phoneNumber);
         this.validateField("guestCount", this.state.guestCount);
+
+
         if(this.state.firstName && this.state.lastName && this.state.emailAddress && this.state.phoneNumber && this.state.guestCount){
-
-
-        
+            
         const cookies = new Cookies();
 
         var userObj = {
@@ -132,8 +133,9 @@ class LandingPage extends Component {
             "guestCount": this.state.guestCount
         }
 
-        cookies.set(" demo-requested", userObj, { path: "/" });
+        cookies.set(" demo-requested", userObj, { path: "/thank-you" });
         this.props.history.push("/thank-you");
+
     } 
     };
 
