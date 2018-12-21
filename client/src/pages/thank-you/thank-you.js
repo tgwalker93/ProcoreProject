@@ -10,7 +10,6 @@ class ThankYou extends Component {
     constructor(props) {
         super(props)
         this.state = {
-        articles: [],
         firstName: "",
         lastName: "",
         emailAddress:"",
