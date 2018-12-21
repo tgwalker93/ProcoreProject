@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import Cookies from 'universal-cookie';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import "./landing-page.css";
 class LandingPage extends Component {
     // Setting our component's initial state
@@ -135,7 +134,6 @@ class LandingPage extends Component {
 
         cookies.set("demo-requested", userObj, { path: "/thank-you" });
         this.props.history.push("/thank-you");
-
     } 
     };
 
@@ -187,7 +185,7 @@ class LandingPage extends Component {
 
 
                         
-                        <FormBtn onClick={this.handleFormSubmit}> RSVP </FormBtn>
+                        <FormBtn onClick={this.handleFormSubmit.bind(this)}> RSVP </FormBtn>
                         </form>
                     </Col>
 
