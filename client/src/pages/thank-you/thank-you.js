@@ -51,7 +51,7 @@ class ThankYou extends Component {
 
     render() {
         return (
-            <Container fluid>
+            <Container fluid="true">
 
                 <Row>
                     <Col size="md-12">

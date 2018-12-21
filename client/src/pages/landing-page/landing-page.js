@@ -143,7 +143,7 @@ class LandingPage extends Component {
 
     render() {
         return (
-            <Container id="container" fluid>
+            <Container id="container" fluid="true">
 
                 <Row id="mainRow">
                     <Col id="textCol" size="sm-6">
