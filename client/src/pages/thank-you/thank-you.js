@@ -33,17 +33,16 @@ class ThankYou extends Component {
     };
     getCookie() {
         const cookies = new Cookies();
-        // if (!cookies.get("demo-requested")){
-        //     this.props.history.push("/landing-page");
-        // } else{
-        console.log(cookies.get("demo-requested"));
+        if (!cookies.get("demo-requested")){
+            this.props.history.push("/landing-page");
+        } else{
         var userData = cookies.get("demo-requested");
         this.setState({firstName:userData.firstName});
         this.setState({lastName: userData.lastName});
         this.setState({emailAddress: userData.emailAddress});
         this.setState({phoneNumber: userData.phoneNumber});
         this.setState({guestCount: userData.guestCount});
-        // }
+        }
         
     }
 
@@ -68,7 +67,7 @@ class ThankYou extends Component {
 
                 <div className="cards">
                 <Row>
-                    <Col size="md-4">
+                    <Col size="sm-4">
                         <div className="card">
                             <div className="card-image">
                                 <div className="color-overlay"></div>
@@ -85,7 +84,7 @@ class ThankYou extends Component {
                         
                         </div>
                     </Col>                    
-                    <Col size="md-4">
+                    <Col size="sm-4">
                         <div className="card">
                             <div className="card-image">
                                 <div className="color-overlay"></div>
@@ -103,7 +102,7 @@ class ThankYou extends Component {
 
                         </div>               
                     </Col>
-                    <Col size="md-4">
+                    <Col size="sm-4">
                         <div className="card">
                             <div className="card-image">
                                 <div className="color-overlay"></div>

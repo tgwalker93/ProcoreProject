@@ -72,7 +72,8 @@
     overflow: hidden;
     height: 650px;
      -webkit-box-shadow: 0 5px 6px rgba(113, 140, 175, .75);
-    box-shadow: 0 5px 6px rgba(113, 140, 175, .75);   
+    box-shadow: 0 5px 6px rgba(113, 140, 175, .75); 
+    margin-bottom: 20px;  
 }
 
 .card-text {
