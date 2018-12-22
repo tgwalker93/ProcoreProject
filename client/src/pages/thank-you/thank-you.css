@@ -101,6 +101,14 @@ a:hover, a:focus{
         bottom: 4%;
     }
 }
+@media (max-width: 730px) {
+    .screenshot { 
+        height: 210px;
+    }
+    .cardTextP {
+        font-size: 18px;
+    }
+}
 .card {
     display: -ms-flexbox;
     display: flex;
