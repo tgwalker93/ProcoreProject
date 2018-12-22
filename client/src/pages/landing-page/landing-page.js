@@ -147,7 +147,7 @@ class LandingPage extends Component {
                 <Row id="mainRow">
                     <Col id="textCol" size="sm-6">
                         <img alt="Styleguide" src="https://prcmkt.com/styleguide/images/procore_logo_fc_k.jpg"></img>
-                        <h1 id="textColHeader"> Pssst… can you keep a secret? </h1>
+                        <h1 id="textColHeader"> <stong>Pssst… can you keep a secret? </stong></h1>
                         <div id="textColP">
                         <p> Something unexpected is in the works between Assemble and Procore and we have a feeling it is about to make you insanely happy. </p>
                         <p> <strong> Join us at an exclusive dinner to get the scoop before anyone else… </strong></p>
