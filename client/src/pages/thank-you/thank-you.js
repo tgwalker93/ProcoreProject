@@ -90,7 +90,7 @@ class ThankYou extends Component {
                        
                                 <p className="cardTextP">A step-by-step guide to building your software-buying team, assessing your needs as a company, and determining what you want in a solution.</p>
                                 <br></br>
-                                <a href="/pdf/Construction_Software_Buyers_Guide.pdf"  target="_blank" rel="noopener noreferrer" className="CTAbutton" download><strong> DOWNLOAD</strong> </a>
+                                <a href="./pdf/Construction_Software_Buyers_Guide.pdf"  target="_blank" rel="noopener noreferrer" className="CTAbutton" download><strong> DOWNLOAD</strong> </a>
                                
                             </div>
 
