@@ -86,6 +86,8 @@ class LandingPage extends Component {
     errorClass(error) {
         return (error.length === 0 ? "" : "has-error");
     }
+
+    //This is used onBlur in order to trim the values. 
     formatInput = (event) => {
         const attribute = event.target.getAttribute('name')
         this.setState({ [attribute]: event.target.value.trim() })
@@ -117,8 +119,8 @@ class LandingPage extends Component {
         const cookies = new Cookies();
 
         var userObj = {
-            "firstName": this.state.firstName,
-            "lastName": this.state.lastName,
+            "firstName": this.state.firstName.charAt(0).toUpperCase() + this.state.firstName.slice(1),
+            "lastName": this.state.lastName.charAt(0).toUpperCase() + this.state.lastName.slice(1),
             "emailAddress": this.state.emailAddress,
             "phoneNumber": this.state.phoneNumber,
             "guestCount": this.state.guestCount
@@ -135,21 +137,24 @@ class LandingPage extends Component {
 
                 <Row id="mainRow">
                     <Col id="textCol" size="sm-6">
-                        <img alt="Styleguide" src="https://prcmkt.com/styleguide/images/procore_logo_fc_k.jpg"></img>
-                        <h1 id="textColHeader"> <stong>Pssst… can you keep a secret? </stong></h1>
+                        <img alt="logo" src={require("../../images/logo.jpg")} id="procoreLogo"></img>
+                        <h1 id="textColHeader"> <strong>Pssst… can you keep a secret? </strong></h1>
                         <div id="textColP">
+                            <br />
                         <p> Something unexpected is in the works between Assemble and Procore and we have a feeling it is about to make you insanely happy. </p>
+                         <br />
                         <p> <strong> Join us at an exclusive dinner to get the scoop before anyone else… </strong></p>
+                        <br />                       
                         <p> Here are the details:</p>
                         <p>What: Complimentary dinner and drinks with an announcement by Procore and Assemble</p>
-                        <p>Venue: Guard and Grace Address: Guard and Grace, 1801 California St, Denver, CO 80202</p>
+                        <p>Venue: Guard and Grace</p>
+                        <p>Address: Guard and Grace, 1801 California St, Denver, CO 80202</p>
                         <p id="lastP">Date: Monday, August 21 st Time: 6: 30 PM </p>
                         </div>
-                        <hr id="hline"></hr>
                     </Col>
-                    
+                    <hr id="hline"></hr>
                     <Col id="formCol" size="sm-6">
-                        <h1>RSVP Here</h1>
+                        <h1 id="formHeader">RSVP Here</h1>
                         <form>
                         <p>First Name</p>
                         <Input onBlur={this.formatInput.bind(this)} isvalid={this.state.firstNameValid.toString()} fielderror={this.state.formErrors.firstName} formgroupclass={`form-group ${this.errorClass(this.state.formErrors.firstName)}`} value={this.state.firstName} id="firstName" onChange={this.handleChange.bind(this)} name="firstName"></Input>
