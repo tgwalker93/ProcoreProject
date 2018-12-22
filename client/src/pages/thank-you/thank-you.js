@@ -117,7 +117,7 @@ class ThankYou extends Component {
                     
                                 <p className="cardTextP">We surveyed 967 of our clients ranging from small ot medium to enterprise companies, to find out how their projects are running since they started using Procore.</p>
                                 <br></br>
-                                <a href="/pdf/Emerging_ROI_Overview_2018.pdf" target="_blank" rel="noopener noreferrer" className="CTAbutton" download="Emerging_ROI_Overview_2018.pdf"> <strong>READ THE REPORT</strong></a>
+                                <a href="https://procore.com/downloads/ebooks/Emerging_ROI_Overview_2018.pdf " target="_blank" rel="noopener noreferrer" className="CTAbutton"> <strong>READ THE REPORT</strong></a>
                             </div>
 
                         </div>    
