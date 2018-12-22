@@ -11,10 +11,10 @@ You can refer to the link here to see the application deployed on Heroku: https:
 
 
 * **Landing Page**
-[![/client/source/images/LandingPage.PNG](/client/source/images/LandingPage.PNG)](/client/source/images/LandingPage.PNG)
+[![/images/LandingPage.PNG](/images/LandingPage.PNG)](/images/LandingPage.PNG)
 
 * **Thank You Page**
-[![/client/source/images/ThankYou.PNG](/client/source/images/ThankYou.PNG)](/client/source/images/ThankYou.PNG)
+[![/images/ThankYou.PNG](/images/ThankYou.PNG)](/images/ThankYou.PNG)
 
 
 ## Libraries Used
