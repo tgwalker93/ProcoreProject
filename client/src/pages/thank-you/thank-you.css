@@ -67,10 +67,23 @@ a:hover, a:focus{
     grid-gap: 20px
 }
 @media (max-width: 1200px) {
+        .thankYouText p {
+        width: 100%;
+        margin-bottom: 4%;   
+    }   
     .cards {
-        grid-template-columns: repeat(1, 1fr)
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 30px
     }
+    .CTAbutton {
+        bottom: 4%;
+    }
+    .screenshot {
+        height: 350px;
+    }
+
 }
+
 @media (max-width: 800px) {
     .thankYouText p {
         width: 100%;
