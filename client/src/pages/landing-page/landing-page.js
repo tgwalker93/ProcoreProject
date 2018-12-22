@@ -86,20 +86,9 @@ class LandingPage extends Component {
     errorClass(error) {
         return (error.length === 0 ? "" : "has-error");
     }
-    trimField(fieldName, obj) {
-        switch (fieldName) {
-            case "firstName":
-                obj.state.firstName = obj.state.firstName.trim();
-                break;
-            case "lastName":
-                obj.state.lastName = obj.state.lastName.trim(); 
-                break;
-            case "emailAddress":
-                obj.state.emailAddress = obj.state.emailAddress.trim();       
-                break;
-            default:
-                break;
-        }      
+    formatInput = (event) => {
+        const attribute = event.target.getAttribute('name')
+        this.setState({ [attribute]: event.target.value.trim() })
     }
     formatPhone(obj) {
         if(obj == null){
@@ -163,14 +152,14 @@ class LandingPage extends Component {
                         <h1>RSVP Here</h1>
                         <form>
                         <p>First Name</p>
-                        <Input onBlur={this.trimField("firstName", this)} isvalid={this.state.firstNameValid.toString()} fielderror={this.state.formErrors.firstName} formgroupclass={`form-group ${this.errorClass(this.state.formErrors.firstName)}`} value={this.state.firstName} id="firstName" onChange={this.handleChange.bind(this)} name="firstName"></Input>
+                        <Input onBlur={this.formatInput.bind(this)} isvalid={this.state.firstNameValid.toString()} fielderror={this.state.formErrors.firstName} formgroupclass={`form-group ${this.errorClass(this.state.formErrors.firstName)}`} value={this.state.firstName} id="firstName" onChange={this.handleChange.bind(this)} name="firstName"></Input>
 
 
                         <p>Last Name</p>
-                        <Input onBlur={this.trimField("lastName", this)} isvalid={this.state.lastNameValid.toString()} fielderror={this.state.formErrors.lastName} formgroupclass={`form-group ${this.errorClass(this.state.formErrors.lastName)}`} value={this.state.lastName} id="lastName" onChange={this.handleChange.bind(this)} name="lastName"></Input>
+                        <Input onBlur={this.formatInput.bind(this)} isvalid={this.state.lastNameValid.toString()} fielderror={this.state.formErrors.lastName} formgroupclass={`form-group ${this.errorClass(this.state.formErrors.lastName)}`} value={this.state.lastName} id="lastName" onChange={this.handleChange.bind(this)} name="lastName"></Input>
 
                         <p>Email Address</p>
-                        <Input onBlur={this.trimField("emailAddress", this)}isvalid={this.state.emailAddressValid.toString()} fielderror={this.state.formErrors.emailAddress} formgroupclass={`form-group ${this.errorClass(this.state.formErrors.emailAddress)}`} value={this.state.emailAddress} id="emailAddress" onChange={this.handleChange.bind(this)} name="emailAddress"></Input>
+                        <Input onBlur={this.formatInput.bind(this)}isvalid={this.state.emailAddressValid.toString()} fielderror={this.state.formErrors.emailAddress} formgroupclass={`form-group ${this.errorClass(this.state.formErrors.emailAddress)}`} value={this.state.emailAddress} id="emailAddress" onChange={this.handleChange.bind(this)} name="emailAddress"></Input>
 
 
                         <p>Phone Number</p>
