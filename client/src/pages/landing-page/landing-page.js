@@ -4,7 +4,6 @@ import { Input, FormBtn } from "../../components/Form";
 import Cookies from 'universal-cookie';
 import "./landing-page.css";
 class LandingPage extends Component {
-    // Setting our component's initial state
     constructor(props){
     super(props)
     this.state = {
@@ -23,11 +22,7 @@ class LandingPage extends Component {
     };
     }
 
-
-    componentDidMount() { 
-        
-    }
-    // Handles updating component state when the user types into the input field
+    
     handleChange(e) {
         this.setState({ [e.target.id]: e.target.value });
     }   

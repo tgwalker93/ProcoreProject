@@ -81,6 +81,10 @@ a:hover, a:focus{
     .screenshot {
         height: 350px;
     }
+    .col-sm-4 {
+        width: 100%;
+        float: none;
+    }
 
 }
 

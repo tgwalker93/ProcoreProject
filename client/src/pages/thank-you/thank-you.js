@@ -5,7 +5,6 @@ import Cookies from 'universal-cookie';
 
 
 class ThankYou extends Component {
-    // Setting our component's initial state
     constructor(props) {
         super(props)
         this.state = {
@@ -17,14 +16,11 @@ class ThankYou extends Component {
     };
 }
 
-    // When the component mounts, load all books and save them to this.state.books
+   
     componentDidMount() {
         this.getCookie();
     }
-
-
-
-    // Handles updating component state when the user types into the input field
+  
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -45,9 +41,6 @@ class ThankYou extends Component {
         }
         
     }
-
-
-
 
     render() {
         return (
@@ -117,7 +110,7 @@ class ThankYou extends Component {
                     
                                 <p className="cardTextP">We surveyed 967 of our clients ranging from small ot medium to enterprise companies, to find out how their projects are running since they started using Procore.</p>
                                 <br></br>
-                                <a href="https://procore.com/downloads/ebooks/Emerging_ROI_Overview_2018.pdf " target="_blank" rel="noopener noreferrer" className="CTAbutton"> <strong>READ THE REPORT</strong></a>
+                                <a href="https://procore.com/downloads/ebooks/Emerging_ROI_Overview_2018.pdf" target="_blank" rel="noopener noreferrer" className="CTAbutton"> <strong>READ THE REPORT</strong></a>
                             </div>
 
                         </div>    
