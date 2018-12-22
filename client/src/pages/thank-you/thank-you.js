@@ -97,7 +97,7 @@ class ThankYou extends Component {
                        
                                 <p className="cardTextP">A step-by-step guide to building your software-buying team, assessing your needs as a company, and determining what you want in a solution.</p>
                                 <br></br>
-                                <a href="https://procore.com/downloads/ebooks/Construction_Software_Buyers_Guide.pdf" target="_blank" rel="noopener noreferrer" className="CTAbutton" download="Construction_Software_Buyers_Guide.pdf"><strong> DOWNLOAD</strong> </a>
+                                <a href="/pdf/Construction_Software_Buyers_Guide.pdf"  target="_blank" rel="noopener noreferrer" className="CTAbutton" download><strong> DOWNLOAD</strong> </a>
                                
                             </div>
 
@@ -117,7 +117,7 @@ class ThankYou extends Component {
                     
                                 <p className="cardTextP">We surveyed 967 of our clients ranging from small ot medium to enterprise companies, to find out how their projects are running since they started using Procore.</p>
                                 <br></br>
-                                <a href="https://procore.com/downloads/ebooks/Emerging_ROI_Overview_2018.pdf" target="_blank" rel="noopener noreferrer" className="CTAbutton" download="Emerging_ROI_Overview_2018.pdf"> <strong>READ THE REPORT</strong></a>
+                                <a href="/pdf/Emerging_ROI_Overview_2018.pdf" target="_blank" rel="noopener noreferrer" className="CTAbutton" download="Emerging_ROI_Overview_2018.pdf"> <strong>READ THE REPORT</strong></a>
                             </div>
 
                         </div>    
