@@ -22,11 +22,9 @@ class LandingPage extends Component {
     };
     }
 
-    
     handleChange(e) {
         this.setState({ [e.target.id]: e.target.value });
-    }   
-
+    } 
 
     validateFields() {
         let fieldValidationErrors = this.state.formErrors;
@@ -39,7 +37,6 @@ class LandingPage extends Component {
         //Validating email using Regex
         let matchArray = this.state.emailAddress.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
         if(matchArray !== null) {
-            console.log(matchArray);
             emailAddressValid = true;
         }
         fieldValidationErrors.emailAddress = emailAddressValid ? "" : "Please provide a valid email";
@@ -63,7 +60,6 @@ class LandingPage extends Component {
         }
         fieldValidationErrors.guestCount = guestCountValid ? "": "Please provide guest count";
 
-
         this.setState({
             formErrors: fieldValidationErrors,
             emailAddressValid: emailAddressValid,
@@ -73,12 +69,11 @@ class LandingPage extends Component {
             guestCountValid: guestCountValid
         }, () => {
             this.setCookieAndChangePage();
-        });
-
-       
+        });    
     }
 
-
+    //Here we check if the field has an error. If it does, it will add the "has-error" class to the field.
+    //"has-error" is a default bootstrap class that will nicely color the outline of the field red to indicate an error for the user. 
     errorClass(error) {
         return (error.length === 0 ? "" : "has-error");
     }
@@ -88,6 +83,7 @@ class LandingPage extends Component {
         const attribute = event.target.getAttribute('name')
         this.setState({ [attribute]: event.target.value.trim() })
     }
+
     formatPhone(obj) {
         if(obj == null){
             return;
@@ -95,25 +91,19 @@ class LandingPage extends Component {
         var numbers = obj.state.phoneNumber.replace(/\D/g, "").substring(0,10),
             char = { 0: "(", 3: ") ", 6: " - " };
         obj.state.phoneNumber = "";
-        for (var i = 0; i < numbers.length; i++) {
-            
-            obj.state.phoneNumber += (char[i] || "") + numbers[i];
-            
+        for (var i = 0; i < numbers.length; i++) { 
+            obj.state.phoneNumber += (char[i] || "") + numbers[i];    
         }
     }
+
     handleFormSubmit = event => {
-        event.preventDefault();
+        event.preventDefault();    
         this.validateFields();
-
-   
-
-  
- 
-
     };
 
     setCookieAndChangePage() {
 
+        //This function will be called once all fields are validated. If any are not valid, the binary "valid" variable will be false.
         if (this.state.firstNameValid && this.state.lastNameValid && this.state.emailAddressValid && this.state.phoneNumberValid && this.state.guestCountValid) {
 
             const cookies = new Cookies();
@@ -182,18 +172,11 @@ class LandingPage extends Component {
                             <option value="5+">5+</option>
                         </select>
                         {this.state.guestCountValid ? "" : <span className="help-block">{this.state.formErrors.guestCount}</span>}
-                        </div>
-
-
-                        
+                        </div>                  
                         <FormBtn onClick={this.handleFormSubmit.bind(this)}> RSVP </FormBtn>
                         </form>
                     </Col>
-
                 </Row>
-
-
-
 
             </Container>
         );

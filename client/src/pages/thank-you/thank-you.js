@@ -14,9 +14,9 @@ class ThankYou extends Component {
         phoneNumber:"",
         guestCount:""
     };
-}
+    }
 
-   
+    //When the page loads, we want to get the data from the cookie.
     componentDidMount() {
         this.getCookie();
     }
@@ -27,8 +27,10 @@ class ThankYou extends Component {
             [name]: value
         });
     };
+
     getCookie() {
         const cookies = new Cookies();
+        //Here we check if the cookie "demo-requested" exists. If not, then we send user back to landing page.
         if (!cookies.get("demo-requested")){
             this.props.history.push("/landing-page");
         } else{
@@ -52,9 +54,7 @@ class ThankYou extends Component {
                         <h1 id="thankYouHeader"><strong>Thank you {(this.state.firstName!==null || this.state.firstName!=="") ? this.state.firstName: this.state.lastName}!</strong></h1>
                         <p> A procore event planner will contact you shortly at {this.state.emailAddress} to confirm your RSVP. In the meantime, here are some resources to learn more about the event topics </p>
                         </div>
-
                     </Col>
-
                 </Row>
 
                 <div className="cards">
@@ -69,12 +69,10 @@ class ThankYou extends Component {
                             <div className="card-text">
                             <div className="eyeBrow">VIDEO</div>
                             <h1 className="cardTextHeader">Procore Video Tour</h1>
-             
                             <p className="cardTextP">Dive in and see all of our products, explore different processes within the Procore app, and discover how our Customer Success Team works.</p>
                             <br></br>
                                 <a target="_blank" href="http://procore.com/tour" rel="noopener noreferrer" className="CTAbutton"><strong>WATCH NOW </strong> </a>         
-                            </div>                  
-                        
+                            </div>                           
                         </div>
                     </Col>                    
                     <Col size="sm-4">
@@ -86,14 +84,12 @@ class ThankYou extends Component {
                             </div>
                             <div className="card-text">
                                 <div className="eyeBrow">EBOOK</div>
-                                <h1 className="cardTextHeader">Construction Software Buyer's Guide</h1>
-                       
+                                <h1 className="cardTextHeader">Construction Software Buyer's Guide</h1>      
                                 <p className="cardTextP">A step-by-step guide to building your software-buying team, assessing your needs as a company, and determining what you want in a solution.</p>
                                 <br></br>
                                 <a href="./pdf/Construction_Software_Buyers_Guide.pdf"  target="_blank" rel="noopener noreferrer" className="CTAbutton" download><strong> DOWNLOAD</strong> </a>
                                
                             </div>
-
                         </div>               
                     </Col>
                     <Col size="sm-4">
@@ -106,19 +102,16 @@ class ThankYou extends Component {
                             </div>
                             <div className="card-text">
                                 <div className="eyeBrow">EBOOK</div>
-                                <h1 className="cardTextHeader">Procore Customer Survey: Return on Investment</h1>
-                    
+                                <h1 className="cardTextHeader">Procore Customer Survey: Return on Investment</h1>                
                                 <p className="cardTextP">We surveyed 967 of our clients ranging from small ot medium to enterprise companies, to find out how their projects are running since they started using Procore.</p>
                                 <br></br>
                                 <a href="https://procore.com/downloads/ebooks/Emerging_ROI_Overview_2018.pdf" target="_blank" rel="noopener noreferrer" className="CTAbutton"> <strong>READ THE REPORT</strong></a>
                             </div>
-
                         </div>    
-        )}                
+                        )}                
                     </Col>
                 </Row>
                 </div>
-
 
             </Container>
         );
