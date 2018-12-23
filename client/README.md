@@ -19,7 +19,7 @@ You can refer to the link here to see the application deployed on Heroku: https:
 
 ## Libraries Used
 
-* [react-router](https://www.npmjs.com/package/react-routere) 
+* [react-router](https://www.npmjs.com/package/react-router) 
 * [react-cookie](https://www.npmjs.com/package/universal-cookie) 
 
 ## Author
