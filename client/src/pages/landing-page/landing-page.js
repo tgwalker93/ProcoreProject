@@ -28,51 +28,52 @@ class LandingPage extends Component {
     }   
 
 
-    validateField(fieldName, value) {
+    validateFields() {
         let fieldValidationErrors = this.state.formErrors;
         let emailAddressValid = this.state.emailAddressValid;
-        let passwordValid = this.state.passwordValid;
         let firstNameValid = this.state.firstNameValid;
         let lastNameValid = this.state.lastNameValid;
         let phoneNumberValid = this.state.phoneNumberValid;
         let guestCountValid = this.state.guestCountValid;
 
-        switch (fieldName) {
-            case "emailAddress":
-                emailAddressValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-                fieldValidationErrors.emailAddress = emailAddressValid ? "" : "Please provide a valid email";
-                break;
-            case "firstName":
-                firstNameValid = value.length >0;
-                fieldValidationErrors.firstName = firstNameValid ? "": "Please provide your first name";
-                break;
-            case "lastName":
-                lastNameValid = value.length > 0;
-                fieldValidationErrors.lastName = lastNameValid ? "":"Please provide your last name";
-                break;
-            case "phoneNumber":
-                phoneNumberValid = value.length===16;
-                fieldValidationErrors.phoneNumber = phoneNumberValid ? "":"Please provide a phone number";
-                break;
-            case "guestCount":
-                guestCountValid = true;
-                if(value === "" || value==="Select"){
-                    guestCountValid = false;
-                }
-                fieldValidationErrors.guestCount = guestCountValid ? "": "Please provide guest count";
-                break;
-            default:
-                break;
+        //Validating email using Regex
+        let matchArray = this.state.emailAddress.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        if(matchArray !== null) {
+            console.log(matchArray);
+            emailAddressValid = true;
         }
+        fieldValidationErrors.emailAddress = emailAddressValid ? "" : "Please provide a valid email";
+
+        //Validating First Name by checking if there is anything there.
+        firstNameValid = this.state.firstName.length >0;
+        fieldValidationErrors.firstName = firstNameValid ? "": "Please provide your first name";
+
+        //Validating Last Name by checking if there is anything there.
+        lastNameValid = this.state.lastName.length > 0;
+        fieldValidationErrors.lastName = lastNameValid ? "":"Please provide your last name";
+
+        //Validating phone number by checking if there are 16 digits. (counting the special characters besides the digits.)
+        phoneNumberValid = this.state.phoneNumber.length===16;
+        fieldValidationErrors.phoneNumber = phoneNumberValid ? "":"Please provide a phone number";
+
+        //Validate guest count by checking if user made a selection.
+        guestCountValid = true;
+        if(this.state.guestCount === "" || this.state.guestCount==="Select"){
+            guestCountValid = false;
+        }
+        fieldValidationErrors.guestCount = guestCountValid ? "": "Please provide guest count";
+
+
         this.setState({
             formErrors: fieldValidationErrors,
             emailAddressValid: emailAddressValid,
-            passwordValid: passwordValid,
             firstNameValid: firstNameValid,
             lastNameValid: lastNameValid,
             phoneNumberValid: phoneNumberValid,
             guestCountValid: guestCountValid
-        }, this.validateForm);
+        }, () => {
+            this.setCookieAndChangePage();
+        });
 
        
     }
@@ -102,29 +103,33 @@ class LandingPage extends Component {
     }
     handleFormSubmit = event => {
         event.preventDefault();
-        this.validateField("firstName", this.state.firstName);
-        this.validateField("lastName", this.state.lastName);
-        this.validateField("emailAddress", this.state.emailAddress);
-        this.validateField("phoneNumber", this.state.phoneNumber);
-        this.validateField("guestCount", this.state.guestCount);
+        this.validateFields();
 
+   
 
-        if(this.state.firstNameValid && this.state.lastNameValid && this.state.emailAddressValid && this.state.phoneNumberValid && this.state.guestCountValid){
-            
-        const cookies = new Cookies();
+  
+ 
 
-        var userObj = {
-            "firstName": this.state.firstName.charAt(0).toUpperCase() + this.state.firstName.slice(1),
-            "lastName": this.state.lastName.charAt(0).toUpperCase() + this.state.lastName.slice(1),
-            "emailAddress": this.state.emailAddress,
-            "phoneNumber": this.state.phoneNumber,
-            "guestCount": this.state.guestCount
-        }
-
-        cookies.set("demo-requested", userObj, { path: "/" });
-        this.props.history.push("/thank-you");
-    } 
     };
+
+    setCookieAndChangePage() {
+
+        if (this.state.firstNameValid && this.state.lastNameValid && this.state.emailAddressValid && this.state.phoneNumberValid && this.state.guestCountValid) {
+
+            const cookies = new Cookies();
+
+            var userObj = {
+                "firstName": this.state.firstName.charAt(0).toUpperCase() + this.state.firstName.slice(1),
+                "lastName": this.state.lastName.charAt(0).toUpperCase() + this.state.lastName.slice(1),
+                "emailAddress": this.state.emailAddress,
+                "phoneNumber": this.state.phoneNumber,
+                "guestCount": this.state.guestCount
+            }
+
+            cookies.set("demo-requested", userObj, { path: "/" });
+            this.props.history.push("/thank-you");
+        }
+    }
 
     render() {
         return (

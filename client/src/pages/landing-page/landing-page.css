@@ -34,6 +34,16 @@ button {
     margin-top: 10px;
 }
 
+button:hover {
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+}
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
 @media (min-width: 768px) {
 #formCol {
     width: 45%;
