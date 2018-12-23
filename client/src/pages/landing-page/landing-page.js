@@ -109,7 +109,7 @@ class LandingPage extends Component {
         this.validateField("guestCount", this.state.guestCount);
 
 
-        if(this.state.firstName && this.state.lastName && this.state.emailAddress && this.state.phoneNumber && this.state.guestCount){
+        if(this.state.firstNameValid && this.state.lastNameValid && this.state.emailAddressValid && this.state.phoneNumberValid && this.state.guestCountValid){
             
         const cookies = new Cookies();
 
