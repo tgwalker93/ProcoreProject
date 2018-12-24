@@ -36,7 +36,7 @@ class LandingPage extends Component {
 
         //Validating email using Regex
         let matchArray = this.state.emailAddress.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        if(matchArray !== null) {
+        if(matchArray.length !== null) {
             emailAddressValid = true;
         }
         fieldValidationErrors.emailAddress = emailAddressValid ? "" : "Please provide a valid email";

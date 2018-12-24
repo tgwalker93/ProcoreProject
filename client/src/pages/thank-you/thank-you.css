@@ -109,6 +109,11 @@ a:hover, a:focus{
         font-size: 18px;
     }
 }
+@media (max-width: 380px) {
+    h1 {
+        font-size: 25px;
+    }
+}
 .card {
     display: -ms-flexbox;
     display: flex;

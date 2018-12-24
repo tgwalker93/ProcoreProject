@@ -57,7 +57,7 @@ button:hover {
 }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     #container {
         margin-top: 0px;
         margin-bottom: 50px;
